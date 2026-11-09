@@ -1,0 +1,15 @@
+{
+  "name": "manarat-alfurood",
+  "version": "1.0.0",
+  "private": true,
+  "description": "منارة الفروض - تطبيق للبحث عن الفروض والاختبارات الجزائرية",
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "sharp": "^0.33.5"
+  }
+}
