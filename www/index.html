@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منارة الفروض</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f2ff;--card:rgba(255,255,255,.78);--tx:#1d1b3a;--mu:#6b6890;--ac:#6d5dfc;--ac2:#00bfa6;--bd:rgba(109,93,252,.2);--sh:0 10px 40px rgba(109,93,252,.18);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0e21;--card:rgba(30,28,60,.78);--tx:#f1efff;--mu:#a9a6d0;--bd:rgba(160,150,255,.25);--sh:0 10px 40px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f0e21;--card:rgba(30,28,60,.78);--tx:#f1efff;--mu:#a9a6d0;--bd:rgba(160,150,255,.25);--sh:0 10px 40px rgba(0,0,0,.5);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--tx);font-family:'Cairo','Segoe UI',Tahoma,sans-serif;overflow-x:hidden;transition:background .4s}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:fl 14s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:380px;height:380px;background:var(--ac);top:-100px;right:-80px}
+.bg i:nth-child(2){width:320px;height:320px;background:var(--ac2);bottom:-80px;left:-60px;animation-delay:-5s}
+.bg i:nth-child(3){width:240px;height:240px;background:#ff7eb6;top:45%;left:40%;opacity:.3;animation-delay:-9s}
+@keyframes fl{to{transform:translate(60px,-50px) scale(1.2)}}
+.wrap{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+.card{background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--bd);border-radius:24px;box-shadow:var(--sh);padding:22px;margin-bottom:16px;animation:pop .6s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}}
+h1,h2,h3{font-family:'Reem Kufi','Cairo',sans-serif;margin:.2em 0 .5em}
+.logo{font-size:2.4rem;text-align:center;background:linear-gradient(90deg,var(--ac),var(--ac2),#ff7eb6,var(--ac));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gr 5s linear infinite}
+@keyframes gr{to{background-position:300% 0}}
+.lamp{font-size:4rem;text-align:center;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
+input,select{width:100%;padding:13px 16px;border-radius:14px;border:2px solid var(--bd);background:transparent;color:var(--tx);font:inherit;font-size:1.05rem;margin:6px 0;outline:none;transition:.25s}
+input:focus,select:focus{border-color:var(--ac);box-shadow:0 0 0 4px rgba(109,93,252,.18)}
+select option{color:#222}
+.btn{border:0;cursor:pointer;font:inherit;font-weight:800;font-size:1.05rem;padding:13px 26px;border-radius:16px;color:#fff;background:linear-gradient(135deg,var(--ac),#9a6bff);box-shadow:0 8px 22px rgba(109,93,252,.4);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.03)}.btn:active{transform:scale(.97)}
+.btn.g{background:transparent;color:var(--mu);box-shadow:none;border:2px solid var(--bd)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.chip{padding:8px 15px;border-radius:99px;border:2px solid var(--bd);cursor:pointer;font-size:.95rem;transition:.2s;user-select:none}
+.chip:hover{transform:translateY(-2px)}
+.chip.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border-color:transparent;animation:pop .3s}
+.lbl{font-weight:800;color:var(--mu);margin-top:10px;font-size:.95rem}
+.dots{display:flex;justify-content:center;gap:8px;margin-bottom:12px}
+.dots b{width:10px;height:10px;border-radius:9px;background:var(--bd);transition:.4s}.dots b.on{width:34px;background:var(--ac)}
+.av{width:120px;height:120px;border-radius:50%;margin:10px auto;display:grid;place-items:center;font-size:3rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--ac),var(--ac2));cursor:pointer;background-size:cover;background-position:center;box-shadow:0 0 0 6px var(--bd);transition:.3s;position:relative}
+.av:hover{transform:scale(1.07) rotate(-3deg)}
+.av::after{content:"📷";position:absolute;bottom:-4px;left:-4px;background:var(--card);border-radius:50%;width:38px;height:38px;display:grid;place-items:center;font-size:1.1rem;box-shadow:var(--sh)}
+.av.s{width:54px;height:54px;font-size:1.4rem;margin:0;box-shadow:0 0 0 3px var(--bd)}.av.s::after{display:none}
+.top{display:flex;align-items:center;gap:12px}
+.top .t{flex:1}.top h2{margin:0;font-size:1.3rem}.top small{color:var(--mu)}
+.ib{width:42px;height:42px;border-radius:13px;border:2px solid var(--bd);background:transparent;cursor:pointer;font-size:1.1rem;color:var(--tx);transition:.25s}.ib:hover{transform:rotate(18deg) scale(1.1)}
+.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:6px;margin-bottom:16px;position:sticky;top:6px;z-index:5;backdrop-filter:blur(14px)}
+.tabs button{flex:1;border:0;background:transparent;color:var(--mu);font:inherit;font-weight:800;padding:10px 4px;border-radius:13px;cursor:pointer;transition:.3s}
+.tabs button.on{background:linear-gradient(135deg,var(--ac),#9a6bff);color:#fff}
+.hero{background:linear-gradient(135deg,var(--ac),#9a6bff 55%,var(--ac2));color:#fff;border:0}
+.hero h2{font-size:1.5rem}.hero p{opacity:.92;margin:.3em 0}
+.type::after{content:"|";animation:bl .8s infinite}@keyframes bl{50%{opacity:0}}
+.res{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--bd);border-radius:18px;margin:10px 0;animation:pop .5s both;transition:.25s}
+.res:hover{transform:translateX(-6px);border-color:var(--ac)}
+.res .ic{font-size:1.8rem}.res .in{flex:1;min-width:0}.res b{display:block}.res small{color:var(--mu);display:block;direction:ltr;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.res a{text-decoration:none}.res .btn{padding:9px 16px;font-size:.95rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.stats div{padding:12px;border-radius:16px;border:1px solid var(--bd)}.stats b{font-size:1.6rem;display:block;color:var(--ac)}
+.ring{position:relative;width:170px;height:170px;margin:8px auto}
+.ring svg{transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:10;stroke-linecap:round}
+.ring .c{position:absolute;inset:0;display:grid;place-items:center;font-size:2.2rem;font-weight:800;font-family:'Reem Kufi',sans-serif}
+.g3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px}.g3 input{padding:9px 10px;font-size:.95rem;text-align:center}
+.big{font-size:2rem;font-weight:800;text-align:center;color:var(--ac)}
+.q{font-size:1.15rem;line-height:1.9;text-align:center}
+.note{font-size:.85rem;color:var(--mu);line-height:1.7}
+.empty{text-align:center;color:var(--mu);padding:20px}
+.shake{animation:sh .4s}@keyframes sh{25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%) translateY(90px);background:var(--tx);color:var(--bg);padding:11px 22px;border-radius:99px;transition:.4s;z-index:9;font-weight:600}.toast.on{transform:translateX(-50%) translateY(0)}
+[hidden]{display:none!important}
+.cap .wrap{padding-top:max(env(safe-area-inset-top,0px),38px)}
+.cap .tabs{top:max(env(safe-area-inset-top,0px),38px)}
+</style>
+</head>
+<body>
+<div class="bg"><i></i><i></i><i></i></div>
+<div class="wrap">
+<section id="ob" class="card"></section>
+<div id="home" hidden>
+ <div class="card top"><div class="av s" id="hav"></div><div class="t"><h2 id="hname"></h2><small id="hlvl"></small></div><button class="ib" id="thm" title="الوضع">🌓</button><button class="ib" id="edt" title="تعديل الحساب">✏️</button></div>
+ <div class="tabs" id="tabs"><button data-p="s" class="on">🔎 البحث</button><button data-p="t">🧰 أدواتي</button><button data-p="f">⭐ المفضلة</button></div>
+ <div id="p-s">
+  <div class="card hero"><h2 id="wel" class="type"></h2><p id="quote"></p></div>
+  <div class="card">
+   <h3>🔎 ابحث عن فرض أو اختبار</h3>
+   <div class="lbl">المستوى</div><select id="lv"></select>
+   <div class="lbl">المادة</div><div class="chips" id="c-sub"></div>
+   <div class="lbl">نوع الوثيقة</div><div class="chips" id="c-typ"></div>
+   <div class="lbl">الفصل</div><div class="chips" id="c-sem"></div>
+   <div class="lbl">المصادر الموثوقة (الجزائر)</div><div class="chips" id="c-src"></div>
+   <button class="btn" id="go" style="width:100%">🚀 ابحث الآن</button>
+  </div>
+  <div id="out"></div>
+ </div>
+ <div id="p-t" hidden>
+  <div class="card"><h3>📅 العدّ التنازلي للفرض</h3><input id="exn" placeholder="اسم الفرض (مثال: فرض الرياضيات)"><input id="exd" type="date"><div class="big" id="cd">—</div></div>
+  <div class="card"><h3>⏱️ مؤقّت المراجعة (25 دقيقة)</h3>
+   <div class="ring"><svg width="170" height="170"><circle cx="85" cy="85" r="75" stroke="var(--bd)"/><circle id="pr" cx="85" cy="85" r="75" stroke="var(--ac)" stroke-dasharray="471" stroke-dashoffset="0"/></svg><div class="c" id="tm">25:00</div></div>
+   <div class="row" style="justify-content:center"><button class="btn" id="ts">▶ ابدأ</button><button class="btn g" id="tr">↺ إعادة</button></div></div>
+  <div class="card"><h3>🧮 حاسبة المعدل</h3><div class="g3 note"><span>المادة</span><span>المعامل</span><span>النقطة /20</span></div><div id="rows"></div>
+   <div class="row" style="margin-top:10px"><button class="btn g" id="ar">＋ مادة</button><button class="btn" id="cm">احسب</button></div><div class="big" id="avg"></div></div>
+ </div>
+ <div id="p-f" hidden><div class="card"><h3>⭐ روابطي المحفوظة</h3><div id="fl"></div></div>
+  <div class="card"><div class="stats"><div><b id="n1">0</b>بحث</div><div><b id="n2">0</b>محفوظ</div><div><b id="n3">0</b>جلسة مراجعة</div></div></div></div>
+</div>
+</div>
+<div class="toast" id="ts2"></div>
+<script>
+try{if(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform())document.documentElement.classList.add('cap')}catch(e){}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const LV=["السنة الأولى ابتدائي","السنة الثانية ابتدائي","السنة الثالثة ابتدائي","السنة الرابعة ابتدائي","السنة الخامسة ابتدائي","السنة الأولى متوسط","السنة الثانية متوسط","السنة الثالثة متوسط","السنة الرابعة متوسط","السنة الأولى ثانوي","السنة الثانية ثانوي","السنة الثالثة ثانوي"];
+const SUB=["اللغة العربية","الرياضيات","العلوم الفيزيائية","علوم الطبيعة والحياة","اللغة الفرنسية","اللغة الإنجليزية","التاريخ والجغرافيا","التربية الإسلامية","التربية المدنية","الإعلام الآلي","التربية التشكيلية","التربية الموسيقية","التربية البدنية","الفلسفة","الأمازيغية"];
+const TYP=["الفرض الأول","الفرض الثاني","اختبار الفصل","حل نموذجي","ملخص الدروس","استعمال الزمن","مذكرات","شهادة التعليم المتوسط","البكالوريا"];
+const SEM=["الفصل الأول","الفصل الثاني","الفصل الثالث"];
+const SRC=[["dzexams.com","📚 دز إيكزامس","أكبر أرشيف للفروض والاختبارات"],["ency-education.com","🎓 موسوعة التعليم","فروض واختبارات وحلول"],["eddirasa.com","📝 الدراسة","دروس وفروض ومذكرات"],["onec.dz","🏛️ الديوان الوطني للامتحانات","مواضيع الشهادات الرسمية"],["education.gov.dz","🇩🇿 وزارة التربية الوطنية","الموقع الرسمي"]];
+const QT=["«وَقُل رَّبِّ زِدْنِي عِلْمًا»","«من سلك طريقًا يلتمس فيه علمًا سهّل الله له طريقًا إلى الجنة»","«النجاح هو مجموع جهود صغيرة تتكرر كل يوم»","«ابدأ من حيث أنت، واستعمل ما عندك، وافعل ما تستطيع»","«الاجتهاد اليوم هو فرحة الغد»","«من جدّ وجد، ومن زرع حصد»","«لا تؤجل مراجعة اليوم إلى الغد»"];
+let S={name:"",last:"",level:"",photo:"",theme:"",favs:[],n1:0,n3:0,exam:{n:"",d:""}};
+try{Object.assign(S,JSON.parse(localStorage.getItem("manara")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("manara",JSON.stringify(S))}catch(e){}};
+const toast=t=>{const e=$("#ts2");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2200)};
+function typeTo(el,t){el.textContent="";el.classList.add("type");let i=0;const k=setInterval(()=>{el.textContent=t.slice(0,++i);if(i>=t.length){clearInterval(k);setTimeout(()=>el.classList.remove("type"),1500)}},45)}
+function theme(){if(S.theme)document.documentElement.dataset.theme=S.theme}
+theme();
+function avatar(el){const s=el.classList.contains("s");if(S.photo){el.style.backgroundImage=`url(${S.photo})`;el.textContent=""}else{el.style.backgroundImage="";el.textContent=(S.name||"؟").trim()[0]}}
+/* ===== التسجيل ===== */
+let step=0;
+function ob(){
+ const o=$("#ob");o.hidden=false;$("#home").hidden=true;
+ const dots=`<div class="dots">${[0,1,2].map(i=>`<b class="${i==step?"on":""}"></b>`).join("")}</div>`;
+ if(step==0){o.innerHTML=`<div class="lamp">🕯️</div><h1 class="logo">منارة الفروض</h1>${dots}<h2 id="h" style="text-align:center"></h2><input id="fn" placeholder="الاسم" value="${S.name}" autocomplete="off"><input id="ln" placeholder="اللقب" value="${S.last}" autocomplete="off"><button class="btn" id="nx" style="width:100%;margin-top:10px">التالي ←</button>`;typeTo($("#h"),"أهلاً بك! ما هو اسمك ولقبك؟");
+  $("#nx").onclick=()=>{const a=$("#fn").value.trim(),b=$("#ln").value.trim();if(!a||!b){o.classList.remove("shake");void o.offsetWidth;o.classList.add("shake");return}S.name=a;S.last=b;step=1;ob()}}
+ if(step==1){o.innerHTML=`${dots}<h2 id="h" style="text-align:center"></h2><div class="chips" id="lc"></div><div class="row"><button class="btn g" id="bk">→ رجوع</button><button class="btn" id="nx" style="flex:1">التالي ←</button></div>`;typeTo($("#h"),`مرحبًا ${S.name}! ما هو مستواك الدراسي؟`);
+  chips("#lc",LV,false,S.level?[S.level]:[]);$("#bk").onclick=()=>{step=0;ob()};
+  $("#nx").onclick=()=>{const v=sel("#lc")[0];if(!v){o.classList.remove("shake");void o.offsetWidth;o.classList.add("shake");return}S.level=v;step=2;ob()}}
+ if(step==2){o.innerHTML=`${dots}<h2 id="h" style="text-align:center"></h2><div class="av" id="av"></div><input type="file" id="fi" accept="image/*" hidden><p class="note" style="text-align:center">اضغط على الدائرة لاختيار صورة لحسابك — أو تخطَّ هذه الخطوة</p><div class="row"><button class="btn g" id="bk">→ رجوع</button><button class="btn g" id="sk" style="flex:1">تخطَّ</button><button class="btn" id="nx" style="flex:1">ابدأ 🚀</button></div>`;typeTo($("#h"),"اختر صورة لحسابك");avatar($("#av"));
+  $("#av").onclick=()=>$("#fi").click();$("#bk").onclick=()=>{step=1;ob()};
+  $("#fi").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement("canvas");c.width=c.height=240;const x=c.getContext("2d"),m=Math.min(im.width,im.height);x.drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,240,240);S.photo=c.toDataURL("image/jpeg",.8);avatar($("#av"));toast("تم اختيار الصورة ✨")};im.src=r.result};r.readAsDataURL(f)};
+  $("#sk").onclick=()=>{S.photo="";fin()};$("#nx").onclick=fin}
+}
+function fin(){save();ob_done();}
+/* ===== مساعدات ===== */
+function chips(id,arr,multi,on=[]){const c=$(id);c.innerHTML="";arr.forEach(t=>{const b=document.createElement("span");b.className="chip"+(on.includes(t)?" on":"");b.textContent=t;b.onclick=()=>{if(!multi)$$(id+" .chip").forEach(x=>x.classList.remove("on"));b.classList.toggle("on",multi?!b.classList.contains("on"):true)};c.append(b)})}
+const sel=id=>$$(id+" .chip.on").map(x=>x.textContent);
+/* ===== الصفحة الرئيسية ===== */
+function ob_done(){
+ $("#ob").hidden=true;$("#home").hidden=false;
+ $("#hname").textContent=S.name+" "+S.last;$("#hlvl").textContent=S.level;avatar($("#hav"));
+ typeTo($("#wel"),`أهلاً ${S.name} ${S.last} 👋`);
+ $("#quote").textContent=QT[new Date().getDate()%QT.length];
+ const lv=$("#lv");lv.innerHTML=LV.map(l=>`<option ${l==S.level?"selected":""}>${l}</option>`).join("");
+ chips("#c-sub",SUB,false);chips("#c-typ",TYP,false,[TYP[0]]);chips("#c-sem",SEM,false,[SEM[0]]);chips("#c-src",SRC.map(s=>s[1]),true,SRC.map(s=>s[1]));
+ favs();stats();cd();
+ if(S.exam.n){$("#exn").value=S.exam.n}if(S.exam.d){$("#exd").value=S.exam.d}
+}
+$("#edt").onclick=()=>{step=0;ob()};
+$("#thm").onclick=()=>{const d=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");S.theme=d=="dark"?"light":"dark";theme();save()};
+$$("#tabs button").forEach(b=>b.onclick=()=>{$$("#tabs button").forEach(x=>x.classList.toggle("on",x==b));["s","t","f"].forEach(p=>$("#p-"+p).hidden=p!=b.dataset.p);if(b.dataset.p=="f"){favs();stats()}});
+/* ===== البحث ===== */
+$("#go").onclick=()=>{
+ const sub=sel("#c-sub")[0],typ=sel("#c-typ")[0],sem=sel("#c-sem")[0],srcs=sel("#c-src"),lv=$("#lv").value;
+ if(!sub){toast("اختر المادة أولًا 📖");return}
+ if(!srcs.length){toast("اختر مصدرًا واحدًا على الأقل");return}
+ S.n1++;save();
+ const q=(d)=>`https://www.google.com/search?q=${encodeURIComponent(`site:${d} ${typ} ${sub} ${lv} ${/شهادة|البكالوريا|استعمال/.test(typ)?"":sem}`)}`;
+ const all=SRC.filter(s=>srcs.includes(s[1]));
+ let h=`<div class="card"><h3>✨ نتائج: ${typ} — ${sub}</h3><p class="note">${lv} · ${sem}. أُنشئت روابط بحث موجَّهة داخل كل موقع جزائري موثوق؛ تُفتح نتائجها في نافذة جديدة.</p>`;
+ const allq=`https://www.google.com/search?q=${encodeURIComponent(all.map(s=>"site:"+s[0]).join(" OR ")+` ${typ} ${sub} ${lv}`)}`;
+ h+=res("🌐","بحث شامل في كل المصادر المحددة",allq,0);
+ all.forEach((s,i)=>h+=res(s[1].split(" ")[0],s[1].slice(3),q(s[0]),i+1,s[2]));
+ const tips=["ابدأ بحلّ الفرض وحدك قبل النظر إلى الحل","راجع دروسك أولًا ثم جرّب الفرض بتوقيت حقيقي","اجمع أخطاءك في دفتر خاص وراجعه قبل الفرض الحقيقي"];
+ h+=`<p class="note">💡 نصيحة: ${tips[S.n1%3]}</p></div>`;
+ $("#out").innerHTML=h;$("#out").scrollIntoView({behavior:"smooth"});bind();
+};
+function res(ic,t,u,i,d=""){const e=u.replace(/"/g,"&quot;");return`<div class="res" style="animation-delay:${i*.08}s"><span class="ic">${ic}</span><div class="in"><b>${t}</b><small>${d||"جميع المواقع المحددة"}</small></div><button class="ib sv" data-t="${t}" data-u="${e}">⭐</button><a href="${e}" target="_blank" rel="noopener"><button class="btn">افتح</button></a></div>`}
+function bind(){$$(".sv").forEach(b=>b.onclick=()=>{S.favs.unshift({t:b.dataset.t+" — "+(sel("#c-sub")[0]||"")+" ("+(sel("#c-typ")[0]||"")+")",u:b.dataset.u});S.favs=S.favs.slice(0,30);save();toast("حُفظ في المفضلة ⭐")})}
+function favs(){const f=$("#fl");f.innerHTML=S.favs.length?S.favs.map((x,i)=>`<div class="res"><span class="ic">🔗</span><div class="in"><b>${x.t}</b></div><a href="${x.u}" target="_blank" rel="noopener"><button class="btn">افتح</button></a><button class="ib" onclick="S.favs.splice(${i},1);save();favs();stats()">🗑️</button></div>`).join(""):`<div class="empty">لا توجد روابط محفوظة بعد.<br>اضغط ⭐ بجانب أي نتيجة لحفظها.</div>`}
+function stats(){$("#n1").textContent=S.n1;$("#n2").textContent=S.favs.length;$("#n3").textContent=S.n3}
+/* ===== الأدوات ===== */
+function cd(){const d=$("#exd").value;if(!d){$("#cd").textContent="—";return}const n=Math.ceil((new Date(d+"T00:00")-new Date())/864e5);$("#cd").textContent=n>0?`باقٍ ${n} يوم ⏳`:n==0?"اليوم هو الفرض! بالتوفيق 🍀":"انتهى الموعد ✅";S.exam={n:$("#exn").value,d};save()}
+$("#exd").onchange=cd;$("#exn").oninput=cd;
+let T=1500,iv=null;const tick=()=>{const m=String(Math.floor(T/60)).padStart(2,"0"),s=String(T%60).padStart(2,"0");$("#tm").textContent=m+":"+s;$("#pr").style.strokeDashoffset=471*(1-T/1500)};
+$("#ts").onclick=()=>{if(iv){clearInterval(iv);iv=null;$("#ts").textContent="▶ تابع";return}$("#ts").textContent="⏸ إيقاف";iv=setInterval(()=>{T--;tick();if(T<=0){clearInterval(iv);iv=null;S.n3++;save();toast("أحسنت! انتهت الجلسة 🎉");T=1500;tick();$("#ts").textContent="▶ ابدأ"}},1000)};
+$("#tr").onclick=()=>{clearInterval(iv);iv=null;T=1500;tick();$("#ts").textContent="▶ ابدأ"};
+function row(n="",c=""){const d=document.createElement("div");d.className="g3";d.innerHTML=`<input placeholder="المادة" value="${n}"><input type="number" placeholder="2" value="${c}" min="1"><input type="number" placeholder="15" min="0" max="20" step="0.25">`;$("#rows").append(d)}
+[["العربية",5],["الرياضيات",4],["الفرنسية",3],["الإنجليزية",2],["العلوم",1]].forEach(a=>row(...a));
+$("#ar").onclick=()=>row();
+$("#cm").onclick=()=>{let s=0,c=0;$$("#rows .g3").forEach(r=>{const i=r.querySelectorAll("input"),k=+i[1].value,m=parseFloat(i[2].value);if(k>0&&!isNaN(m)){s+=k*m;c+=k}});$("#avg").textContent=c?`المعدل: ${(s/c).toFixed(2)} / 20 ${s/c>=10?"🌟":"💪"}`:"أدخل النقاط أولًا"};
+tick();
+if(S.name&&S.last&&S.level)ob_done();else ob();
+</script>
+</body>
+</html>
